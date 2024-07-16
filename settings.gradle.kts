@@ -1,3 +1,4 @@
+rootProject.name = "HP_Wiki"
 
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
@@ -5,13 +6,7 @@ pluginManagement {
     includeBuild("build-logic")
 
     repositories {
-        google {
-            content {
-                includeGroupByRegex("com\\.android.*")
-                includeGroupByRegex("com\\.google.*")
-                includeGroupByRegex("androidx.*")
-            }
-        }
+        google()
         mavenCentral()
         gradlePluginPortal()
     }
@@ -25,7 +20,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "HP_Wiki"
 include(":app")
 include(":common:data")
 include(":common:domain")
@@ -35,7 +29,6 @@ include(":common:core:compose-ui:components")
 include(":common:core:compose-ui:theme")
 include(":common:core:network")
 include(":common:core:database")
-
 
 include(":common:feature:root")
 include(":common:feature:splash")

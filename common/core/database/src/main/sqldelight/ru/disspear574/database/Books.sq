@@ -1,0 +1,23 @@
+CREATE TABLE booksTable (
+  number INTEGER PRIMARY KEY NOT NULL,
+  title TEXT NOT NULL,
+  original_title TEXT NOT NULL,
+  release_date TEXT NOT NULL,
+  description TEXT NOT NULL,
+  pages INTEGER NOT NULL,
+  cover TEXT NOT NULL,
+  num INTEGER NOT NULL
+);
+
+insert:
+INSERT INTO booksTable(number, title, original_title, release_date, description, pages, cover, num)
+VALUES ?;
+
+getAllBooks:
+SELECT * FROM booksTable;
+
+getBookById:
+SELECT * FROM booksTable WHERE number = ?;
+
+clear:
+DELETE FROM booksTable;
