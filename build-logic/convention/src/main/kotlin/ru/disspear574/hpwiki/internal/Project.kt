@@ -9,5 +9,4 @@ import org.gradle.kotlin.dsl.the
 internal val Project.libs
     get() = the<LibrariesForLibs>()
 
-internal fun Project.libraryExtension(action: LibraryExtension.() -> Unit) =
-    extensions.configure<LibraryExtension>(action)
+internal fun Project.libraryExtension(action: LibraryExtension.() -> Unit) = extensions.configure<LibraryExtension>(action)

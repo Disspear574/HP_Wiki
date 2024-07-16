@@ -5,3 +5,6 @@ plugins {
 android {
     namespace = "ru.disspear574.domain"
 }
+dependencies {
+    implementation(libs.koin.core)
+}

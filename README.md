@@ -8,7 +8,7 @@
 
 ## Tech stack
 - UI
-    - [Jetpack Compose]((https://developer.android.com/jetpack/compose)) - Android Ui
+    - [Jetpack Compose](https://developer.android.com/jetpack/compose) - Android Ui
     - [Compose Navigation](https://developer.android.com/develop/ui/compose/navigation) - Navigation
     - [Material Motion](https://github.com/fornewid/material-motion-compose) - Navigation Animations
     - [Coil](https://github.com/coil-kt/coil) - Image Loading
