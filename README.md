@@ -1,6 +1,6 @@
 <h1>HP Wiki</h1>
 
-<div">
+<div>
   <strong>Wikipedia about the Harry Potter books</strong>
 </div>
 
