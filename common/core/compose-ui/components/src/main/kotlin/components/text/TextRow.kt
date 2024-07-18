@@ -11,6 +11,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 
 @Composable
@@ -22,10 +23,10 @@ fun TextRow(
 ) {
     Column(
         modifier =
-            Modifier
-                .fillMaxWidth()
-                .padding(horizontal = 16.dp)
-                .then(modifier),
+        Modifier
+            .fillMaxWidth()
+            .padding(horizontal = 16.dp)
+            .then(modifier),
         horizontalAlignment = Alignment.Start,
         verticalArrangement = Arrangement.Center,
     ) {
@@ -44,4 +45,10 @@ fun TextRow(
         }
         Spacer(modifier = Modifier.height(16.dp))
     }
+}
+
+@Preview
+@Composable
+private fun PreviewTextRow() {
+    TextRow(title = "Some Title", textContent = "Some text content")
 }

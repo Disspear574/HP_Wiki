@@ -13,8 +13,12 @@ class GetDataUseCase(
         if (!configRepository.createdDatabase) {
             bookRepository.clear()
             characterRepository.clear()
-            bookRepository.fetch().apply { configRepository.createdDatabase = this }
-            characterRepository.fetch().apply { configRepository.createdDatabase = this }
+            bookRepository
+                .fetch()
+                .apply { configRepository.createdDatabase = this } &&
+                characterRepository
+                    .fetch()
+                    .apply { configRepository.createdDatabase = this }
         } else {
             true
         }
