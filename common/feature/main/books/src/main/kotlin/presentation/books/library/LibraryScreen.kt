@@ -22,14 +22,14 @@ internal fun LibraryScreen(vm: LibraryViewModel) {
 
     LazyVerticalGrid(
         modifier =
-            Modifier
-                .fillMaxSize()
-                .background(MaterialTheme.colorScheme.background),
+        Modifier
+            .fillMaxSize()
+            .background(MaterialTheme.colorScheme.background),
         columns = GridCells.Fixed(count = 2),
         contentPadding =
-            PaddingValues(
-                bottom = WindowInsets.systemBars.asPaddingValues().calculateBottomPadding(),
-            ),
+        PaddingValues(
+            bottom = WindowInsets.systemBars.asPaddingValues().calculateBottomPadding(),
+        ),
     ) {
         items(items = state.booksList) { book ->
             ItemsList(

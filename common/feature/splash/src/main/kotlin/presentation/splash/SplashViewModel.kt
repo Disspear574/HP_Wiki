@@ -20,7 +20,7 @@ class SplashViewModel(
             reduce { state.copy(result = UiState.Loading) }
             if (isDataLoaded()) {
                 reduce { state.copy(result = UiState.Success) }
-                delay(500)
+                delay(5000)
                 postSideEffect(SplashSideEffect.Complete)
             } else {
                 reduce { state.copy(result = UiState.Failed()) }
@@ -29,8 +29,8 @@ class SplashViewModel(
     }
 
     fun refresh() {
-        intent {
-            reduce { state.copy(result = UiState.Loading) }
+        if (container.stateFlow.value.result != UiState.Loading) {
+            getData()
         }
     }
 }

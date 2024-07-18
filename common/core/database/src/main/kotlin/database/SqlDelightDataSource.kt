@@ -16,23 +16,27 @@ abstract class SqlDelightDataSource(
     private val context: Context,
 ) {
     fun downloadImage(remoteUrl: String?) {
-        val imageRequest = ImageRequest.Builder(context).data(remoteUrl).build()
+        val imageRequest = ImageRequest.Builder(context).data(remoteUrl).crossfade(true).build()
         imageLoader.enqueue(imageRequest)
     }
 }
 
 class BooksDataSourceImpl(
     db: HPDatabase,
-    private val imageLoader: ImageLoader,
-    private val context: Context,
+    imageLoader: ImageLoader,
+    context: Context,
     private val booksApi: BooksApi,
 ) : SqlDelightDataSource(imageLoader, context),
     BookDataSource {
     private val booksQueries = db.booksQueries
 
-    override suspend fun getAllBooks(): List<BookEntity> = booksQueries.getAllBooks().executeAsList().map { it.toEntity() }
+    override suspend fun getAllBooks(): List<BookEntity> =
+        booksQueries.getAllBooks().executeAsList().map { it.toEntity() }
 
-    override suspend fun getBookById(id: Int): BookEntity = booksQueries.getBookById(id.toLong()).executeAsOne().toEntity()
+    override suspend fun getBookById(id: Int): BookEntity = booksQueries
+        .getBookById(id.toLong())
+        .executeAsOne()
+        .toEntity()
 
     override suspend fun fetch(): Boolean {
         try {
@@ -54,16 +58,21 @@ class BooksDataSourceImpl(
 
 class CharacterDataSourceImpl(
     db: HPDatabase,
-    private val imageLoader: ImageLoader,
-    private val context: Context,
+    imageLoader: ImageLoader,
+    context: Context,
     private val charactersApi: CharactersApi,
 ) : SqlDelightDataSource(imageLoader, context),
     CharacterDataSource {
     private val charactersQueries = db.charactersQueries
 
-    override suspend fun getAll(): List<CharacterEntity> = charactersQueries.getAllCharacters().executeAsList().map { it.toEntity() }
+    override suspend fun getAll(): List<CharacterEntity> =
+        charactersQueries.getAllCharacters().executeAsList().map {
+            it.toEntity()
+        }
 
-    override suspend fun getById(id: Int): CharacterEntity = charactersQueries.getCharacterById(id.toLong()).executeAsOne().toEntity()
+    override suspend fun getById(id: Int): CharacterEntity = charactersQueries.getCharacterById(
+        id.toLong()
+    ).executeAsOne().toEntity()
 
     override suspend fun fetch(): Boolean {
         try {

@@ -15,6 +15,7 @@ object KoinInjector {
         startKoin {
             loadKoinModules(
                 listOf(
+                    coilModule,
                     networkModule,
                     dataModule,
                     domainModule,
@@ -22,7 +23,6 @@ object KoinInjector {
                     splashModule,
                     booksModule,
                     charactersModule,
-                    coilModule,
                 ),
             )
         }

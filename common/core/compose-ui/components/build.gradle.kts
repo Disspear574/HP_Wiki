@@ -8,4 +8,6 @@ android {
 
 dependencies {
     api(libs.coil)
+    implementation(libs.koin.core)
+    implementation(libs.koin.compose)
 }

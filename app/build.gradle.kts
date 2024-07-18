@@ -67,6 +67,7 @@ dependencies {
     implementation(projects.common.feature.root)
     implementation(libs.bundles.koin)
     implementation(projects.common.core.coreDi)
+    implementation(libs.coil)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
