@@ -1,7 +1,11 @@
-<h1 align="center">HP Wiki</h1>
-
-<div align="center">
-  <strong>Wikipedia about the Harry Potter books</strong>
+<h1>HP Wiki</h1>
+<strong>Wikipedia about the Harry Potter books</strong>
+<div>
+    <img src="docs/book_list.png" style="height: 700px; width: 400px">
+    <img src="docs/book_info.png" style="height: 700px; width: 400px">
+    <img src="docs/char_list.png" style="height: 700px; width: 400px">
+    <img src="docs/char_info.png" style="height: 700px; width: 400px">
+  
 </div>
 
 <br />
